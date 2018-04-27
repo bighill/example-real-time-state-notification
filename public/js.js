@@ -1,11 +1,38 @@
 const socket = io();
+let doMock = false;
+
+const headerEl = document.getElementsByTagName('header')[0];
 const notificationEl = document.getElementById('notification');
+const startMockBtn = document.getElementById('start-mock');
+const stopMockBtn = document.getElementById('stop-mock');
+
+/*
+| set header class
+*/
+const setHeaderClass = headerClass => headerEl.className = headerClass;
+
+/*
+| toggle doMock
+*/
+const setDoMock = bool => {
+  doMock = bool;
+  mock(bool);
+
+  const headerClass = bool ? 'started' : '';
+  setHeaderClass(headerClass);
+};
+
+/*
+| listeners
+*/
+startMockBtn.addEventListener('click', () => setDoMock(true));
+stopMockBtn.addEventListener('click', () => setDoMock(false));
 
 /*
 | mock state changes
 */
-const mock = () => {
-  socket.emit('mock', 'plz');
+const mock = bool => {
+  socket.emit('mock', bool);
   return 'sending mock';
 };
 

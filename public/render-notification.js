@@ -1,10 +1,21 @@
 (function () {
 
+
+
+const randomColor = () => {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
 /*
 | render html for each node
 */
 const renderNode = (key, val, indent) => {
-  const displayVal = val ? `... ${val}` : '';
+  const displayVal = val ? `... <span style="color:${randomColor()};">${val}</span>` : '';
   return `
     <div style='margin-left:${indent}em;'>
       ${key} ${displayVal}

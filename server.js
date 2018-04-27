@@ -15,28 +15,38 @@ app.get('/', function(req, res){
 });
 
 
-const sample = [
+const jobs = [
   {
-    foo: {
-      bar: 'hi'
-    }
+    job0: {}
   },
   {
-    bleep: {
-      op1: 1,
-      op2: 2,
-    },
+    job1: {}
   },
   {
-    slow: 'fast'
+    job2: {}
   }
 ];
 
-const handleMock = mess => {
-  io.emit('notification', sample);
+let doMock = false;
+
+const eachJobRecurse = (job, jobs) => {
+  if (!doMock) return;
+
+  const r = Math.round(Math.random() * 1000);
+  setTimeout(() => {
+    job.task = r;
+    io.emit('notification', jobs);
+    eachJobRecurse(job, jobs);
+  }, r);
+};
+
+const handleMock = bool => {
+  doMock = bool;
+  jobs.forEach(job => eachJobRecurse(job, jobs));
 };
 
 io.on('connection', socket => {
+  io.emit('notification', jobs);
   socket.on('mock', handleMock);
 });
 

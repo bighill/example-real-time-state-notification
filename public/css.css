@@ -9,6 +9,16 @@ body {
   letter-spacing: 1px;
 }
 
+header.started #start-mock,
+header #stop-mock {
+  display: none;
+}
+
+header.started #stop-mock,
+header #start-mock {
+  display: block;
+}
+
 .gap {
   padding: 1em 0;
 }
