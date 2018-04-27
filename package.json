@@ -1,0 +1,25 @@
+{
+  "name": "real-time-state-notification",
+  "version": "1.0.0",
+  "description": "State notifications via sockets",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bighill/real-time-state-notification.git"
+  },
+  "author": "@bighill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bighill/real-time-state-notification/issues"
+  },
+  "homepage": "https://github.com/bighill/real-time-state-notification#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.17.3",
+    "socket.io": "^2.1.0"
+  }
+}

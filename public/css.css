@@ -1,0 +1,10 @@
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  color: white;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
