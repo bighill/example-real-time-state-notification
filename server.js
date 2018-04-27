@@ -17,15 +17,18 @@ app.get('/', function(req, res){
 
 const sample = [
   {
-    key: 'foo',
-    val: 'bar'
+    foo: {
+      bar: 'hi'
+    }
   },
   {
-    key: 'bleep',
-    val: 'blop'
+    bleep: {
+      op1: 1,
+      op2: 2,
+    },
   },
   {
-    key: 'slow'
+    slow: 'fast'
   }
 ];
 
