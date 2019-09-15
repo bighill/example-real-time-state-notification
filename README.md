@@ -2,7 +2,7 @@
 
 State notifications via sockets.
 
-| node server + vanilla js client
+> node server + vanilla js client
 
 This app is only an example of server/client communication simulating state or status updates from the server. The actual data transmitted here is random and pointless.
 
