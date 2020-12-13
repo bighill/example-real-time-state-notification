@@ -1,6 +1,6 @@
-# real-time-state-notification
+# Real-time State Notifications
 
-State notifications via sockets.
+Random job state notifications via sockets.
 
 > node server + vanilla js client
 
@@ -12,4 +12,5 @@ This app is only an example of server/client communication simulating state or s
 npm install
 node server.js
 ```
+
 View in browser at [http://localhost:3000](http://localhost:3000)
